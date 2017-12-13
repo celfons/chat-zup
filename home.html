@@ -1,0 +1,38 @@
+<div class="row">
+<a class="btn btn-block btn-social btn-lg btn-google" g-login id="login"><span class="fa fa-google"></span>Login Google</a>
+</div>
+<div class="row" id="main">
+<div class="col-md-offset-12"><button type="button" id="logout" ng-click='logout()' class="btn btn-danger">Sair</button></div>
+  <div class="col-md-4">
+     <h1>COACH</h1>
+     <table class="table">
+     <tr>
+        <td><button class="btn btn-primary" ng-click="change('rh')" value="rh">RH</button></td>
+        <td><button class="btn btn-warning" ng-click="change('pd')" value="pd">P&D</button></td>
+        <td><button class="btn btn-info" ng-click="change('financeiro')" value="financeiro">FINANCEIRO</button></td>
+     </tr>
+     </table>
+  </div>
+  <div class="col-md-6 col-md-offset-3" style="position:fixed;overflow-y:scroll;overflow-x:hidden;height: 75%" id="datas">
+    <table class="table">
+     <center><a href ng-if="data.length > limit" ng-click="more()" style="position:fixed;">Mostre mais...</a></center>  
+      <tr ng-repeat="post in data | limitTo: limit">    
+        <td ng-style="{'background-color': {{post.id}} === {{id}} ? '#F8F8FF': ''}">
+         <p ng-bind-html="post.body|trustAsHtml"></p>
+         <p class="blog-post-meta">{{ post.date }}</p>
+       </td>
+     </tr>
+   </table>
+ <div class="col-md-6" style="position: fixed;bottom:0;" id="teclado">
+   <form>
+     <div class="form-group">
+      <trix-editor angular-trix ng-model="body" class="trix-content"></trix-editor>
+    </div>
+   <div class="form-group">
+     <input type="hidden" id="dt" name="dt" ng-model="dt" class="form-control" disabled>
+   </div>
+   <center><button ng-click="addMessage()" type="button" class="btn btn-success">Enviar</button></center>
+ </form>
+</div>
+</div>
+</div>

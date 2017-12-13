@@ -1,0 +1,18 @@
+<h1>COACH RH</h1>
+<table class='table'>
+     <tr><td>CHATS</td></tr>
+     <tr ng-repeat="mensagem in mensagens">    
+        <td>
+        <a href data-toggle="modal" data-target="#{{mensagem.id}}">{{mensagem.id}}</a>
+        <div class="modal fade" id="{{mensagem.id}}" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+             <div class="modal-body">
+                 CHAT!
+            </div>
+            </div>
+          </div>
+        </div>
+      </td>
+     </tr>
+</table>
