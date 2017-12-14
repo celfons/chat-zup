@@ -23,6 +23,14 @@ angular.module("app").service("FirebaseService", function($firebaseArray, $fireb
       vm.addPosts.push(post);
     };
     
+    this.update = function(id) {
+        console.log(id+'ok');
+      var ref = new Firebase("https://chat-zup.firebaseio.com/posts/"+id);
+        ref.update({
+          active: false,
+        });
+    };
+    
     this.getMensagem = function(value){
         vm.posts = vm.ref.child("posts").orderByChild("setor_usuario").equalTo('rh'+value);
         vm.syncObject = $firebaseArray(vm.posts);
@@ -42,3 +50,4 @@ angular.module("app").service("FirebaseService", function($firebaseArray, $fireb
     };
 
   });
+

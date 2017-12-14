@@ -32,6 +32,10 @@ $scope.exibir = function(value){
     $scope.id = value;
 }
 
+$scope.resolver = function(id){
+    FirebaseService.update(id)
+}
+
 $scope.mensagens = FirebaseService.getSetor();
 
 $scope.logout = function() {
@@ -51,7 +55,7 @@ $scope.addMessage = function() {
 
  if ($scope.body && $scope.setor) {
      
-   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt });
+   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true });
 
    $scope.body = "";
    $scope.dt = dtF;
