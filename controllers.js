@@ -44,13 +44,320 @@ $scope.addMessage = function() {
   }
 
  if ($scope.body && $scope.setor) {
-     
-   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true, host : 'user' });
+    var name = random() ; 
+   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true, host : 'user', nome : name });
 
    $scope.body = "";
    $scope.dt = dtF;
  }
 };
+
+function random () {
+return nomes[Math.random() * nomes.length | 0];
+}
+var nomes = [
+  {
+    "name" : "Cherish"
+  },
+  {
+    "name" : "Sharleen"
+  },
+  {
+    "name" : "Velma"
+  },
+  {
+    "name" : "Merlin"
+  },
+  {
+    "name" : "Guillermina"
+  },
+  {
+    "name" : "Manie"
+  },
+  {
+    "name" : "Annelle"
+  },
+  {
+    "name" : "Gillian"
+  },
+  {
+    "name" : "Shandra"
+  },
+  {
+    "name" : "Gonzalo"
+  },
+  {
+    "name" : "Pauline"
+  },
+  {
+    "name" : "Ela"
+  },
+  {
+    "name" : "Eveline"
+  },
+  {
+    "name" : "Kasha"
+  },
+  {
+    "name" : "Fidela"
+  },
+  {
+    "name" : "Octavio"
+  },
+  {
+    "name" : "Kristyn"
+  },
+  {
+    "name" : "Misha"
+  },
+  {
+    "name" : "Lamont"
+  },
+  {
+    "name" : "Khalilah"
+  },
+  {
+    "name" : "Tatiana"
+  },
+  {
+    "name" : "Johanne"
+  },
+  {
+    "name" : "Marcela"
+  },
+  {
+    "name" : "Wai"
+  },
+  {
+    "name" : "Janene"
+  },
+  {
+    "name" : "Vania"
+  },
+  {
+    "name" : "Adriana"
+  },
+  {
+    "name" : "Alexia"
+  },
+  {
+    "name" : "Mittie"
+  },
+  {
+    "name" : "Lindsay"
+  },
+  {
+    "name" : "Jerrod"
+  },
+  {
+    "name" : "Shelia"
+  },
+  {
+    "name" : "Mathilda"
+  },
+  {
+    "name" : "Sona"
+  },
+  {
+    "name" : "Melanie"
+  },
+  {
+    "name" : "Eddy"
+  },
+  {
+    "name" : "Richard"
+  },
+  {
+    "name" : "Junie"
+  },
+  {
+    "name" : "Ana"
+  },
+  {
+    "name" : "Fatimah"
+  },
+  {
+    "name" : "Dion"
+  },
+  {
+    "name" : "Natacha"
+  },
+  {
+    "name" : "Crissy"
+  },
+  {
+    "name" : "Tommye"
+  },
+  {
+    "name" : "Beverlee"
+  },
+  {
+    "name" : "Joana"
+  },
+  {
+    "name" : "Berta"
+  },
+  {
+    "name" : "Renetta"
+  },
+  {
+    "name" : "Fritz"
+  },
+  {
+    "name" : "Stephine"
+  },
+  {
+    "name" : "Hilton"
+  },
+  {
+    "name" : "Ileen"
+  },
+  {
+    "name" : "Keith"
+  },
+  {
+    "name" : "Myriam"
+  },
+  {
+    "name" : "Antione"
+  },
+  {
+    "name" : "Benjamin"
+  },
+  {
+    "name" : "Edna"
+  },
+  {
+    "name" : "Georgia"
+  },
+  {
+    "name" : "Mora"
+  },
+  {
+    "name" : "Carola"
+  },
+  {
+    "name" : "Eliseo"
+  },
+  {
+    "name" : "Kelsie"
+  },
+  {
+    "name" : "Miquel"
+  },
+  {
+    "name" : "Kassie"
+  },
+  {
+    "name" : "Nathaniel"
+  },
+  {
+    "name" : "Katie"
+  },
+  {
+    "name" : "Sharilyn"
+  },
+  {
+    "name" : "Marcus"
+  },
+  {
+    "name" : "Pete"
+  },
+  {
+    "name" : "Millie"
+  },
+  {
+    "name" : "Markita"
+  },
+  {
+    "name" : "Dave"
+  },
+  {
+    "name" : "Maryanne"
+  },
+  {
+    "name" : "Fermina"
+  },
+  {
+    "name" : "Lennie"
+  },
+  {
+    "name" : "Serena"
+  },
+  {
+    "name" : "Vernia"
+  },
+  {
+    "name" : "Joella"
+  },
+  {
+    "name" : "Asha"
+  },
+  {
+    "name" : "Cruz"
+  },
+  {
+    "name" : "Felicita"
+  },
+  {
+    "name" : "Jasmin"
+  },
+  {
+    "name" : "Earlean"
+  },
+  {
+    "name" : "Luise"
+  },
+  {
+    "name" : "Van"
+  },
+  {
+    "name" : "Romona"
+  },
+  {
+    "name" : "Salvatore"
+  },
+  {
+    "name" : "Ivonne"
+  },
+  {
+    "name" : "Tessie"
+  },
+  {
+    "name" : "Jaquelyn"
+  },
+  {
+    "name" : "Letha"
+  },
+  {
+    "name" : "Keesha"
+  },
+  {
+    "name" : "Jolene"
+  },
+  {
+    "name" : "Fernanda"
+  },
+  {
+    "name" : "Yoko"
+  },
+  {
+    "name" : "Parthenia"
+  },
+  {
+    "name" : "Frankie"
+  },
+  {
+    "name" : "Emilie"
+  },
+  {
+    "name" : "Terica"
+  },
+  {
+    "name" : "Shondra"
+  }
+];
+
 }
 ]);
 	
