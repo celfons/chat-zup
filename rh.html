@@ -9,29 +9,29 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-             <div class="modal-body">
-                  <div class="col-md-6 col-md-offset-3" style="position:fixed;overflow-y:scroll;overflow-x:hidden;height: 75%" id="datas">
-                    <table class="table">
-                     <center><a href ng-if="data.length > limit" ng-click="more()" style="position:fixed;">Mostre mais...</a></center>  
-                      <tr ng-repeat="post in data | limitTo: limit">    
-                        <td ng-style="{'background-color': {{post.id}} === {{id}} ? '#F8F8FF': ''}">
-                         <p ng-bind-html="post.body|trustAsHtml"></p>
-                         <p class="blog-post-meta">{{ post.date }}</p>
-                       </td>
-                     </tr>
-                   </table>
-                 <div class="col-md-6" style="position: fixed;bottom:0;" id="teclado">
-                   <form>
-                     <div class="form-group">
-                      <trix-editor angular-trix ng-model="body" class="trix-content"></trix-editor>
-                    </div>
-                   <div class="form-group">
-                     <input type="hidden" id="dt" name="dt" ng-model="dt" class="form-control" disabled>
-                   </div>
-                   <center><button ng-click="addMessage()" type="button" class="btn btn-success">Enviar</button></center>
-                 </form>
-                </div>
-                </div>
+                 <div class="modal-body">
+                     <div class="col-md-6 col-md-offset-3" style="position:fixed;overflow-y:scroll;overflow-x:hidden;height: 75%" id="datas">
+                        <table class="table">
+                         <center><a href ng-if="data.length > limit" ng-click="more()" style="position:fixed;">Mostre mais...</a></center>  
+                          <tr ng-repeat="post in data | limitTo: limit">    
+                            <td ng-style="{'background-color': {{post.id}} === {{id}} ? '#F8F8FF': ''}">
+                             <p ng-bind-html="post.body|trustAsHtml"></p>
+                             <p class="blog-post-meta">{{ post.date }}</p>
+                           </td>
+                         </tr>
+                       </table>
+                     <div class="col-md-6" style="position: fixed;bottom:0;" id="teclado">
+                       <form>
+                         <div class="form-group">
+                          <trix-editor angular-trix ng-model="msg" class="trix-content"></trix-editor>
+                        </div>
+                       <div class="form-group">
+                         <input type="hidden" id="dt" name="dt" ng-model="dt" class="form-control" disabled>
+                       </div>
+                       <center><button ng-click="addMessage()" type="button" class="btn btn-success">Enviar</button></center>
+                     </form>
+                    </div> 
+                 </div>
             </div>
             </div>
         </div>
@@ -39,4 +39,3 @@
       <td><button class='btn btn-warning' ng-click='resolver(mensagem.$id)'>Fechar</button></td>
      </tr>
 </table>
-

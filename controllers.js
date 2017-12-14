@@ -11,6 +11,11 @@ angular.module("app").controller("HomeController", ["$rootScope","$scope", "sync
   $scope.more = function() {
       $scope.limit += limitStep;
   };
+  
+  $scope.change = function(value){
+    $scope.setor = value
+    $scope.data = FirebaseService.getPosts($scope.setor,$scope.id);
+}
 
 
 $scope.$on('event:social-sign-in-success', function(event, userDetails) {
@@ -20,23 +25,6 @@ $scope.$on('event:social-sign-in-success', function(event, userDetails) {
   $("#main").show();
   $scope.$apply();
 });
-
-$scope.change = function(value){
-    $scope.setor = value
-    $scope.data = FirebaseService.getPosts($scope.setor,$scope.id);
-}
-
-$scope.exibir = function(value){
-    $scope.data = FirebaseService.getMensagem(value);
-    $scope.setor = 'rh';
-    $scope.id = value;
-}
-
-$scope.resolver = function(id){
-    FirebaseService.update(id)
-}
-
-$scope.mensagens = FirebaseService.getSetor();
 
 $scope.logout = function() {
   document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://celfons.marcelfonseca.com.br/chat-zup/#/";
@@ -50,7 +38,7 @@ $scope.dt = dtF;
 $scope.addMessage = function() {
 
   if($scope.setor == null){
-     alert('Selecione o Setor correspondente clicando nas opções do lado esquerdo!');
+     alert('Selecione o Setor correspondente clicando nas opÃ§Ãµes do lado esquerdo!');
   }
 
  if ($scope.body && $scope.setor) {

@@ -12,7 +12,7 @@ angular.module("app").config(function($routeProvider) {
     })
      .when('/rh', {
       templateUrl : 'rh.html',
-      controller : 'HomeController',
+      controller : 'RhController',
       resolve: {
         "syncObject" : function(FirebaseService) {
           return FirebaseService.getSetor();

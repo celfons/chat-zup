@@ -50,4 +50,3 @@ angular.module("app").service("FirebaseService", function($firebaseArray, $fireb
     };
 
   });
-
