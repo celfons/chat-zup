@@ -30,6 +30,8 @@ $scope.logout = function() {
   document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://celfons.marcelfonseca.com.br/chat-zup/#/";
 }
 
+$scope.user = 'Usuário Anônimo';
+
 var d   = new Date();
 var dtF = (d.getDate() < 10 ? "0" : "") + d.getDate() + "/" + (d.getMonth() + 1 < 10 ? "0" : "") + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 
@@ -43,7 +45,7 @@ $scope.addMessage = function() {
 
  if ($scope.body && $scope.setor) {
      
-   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true });
+   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true, host : 'user' });
 
    $scope.body = "";
    $scope.dt = dtF;

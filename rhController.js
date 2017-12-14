@@ -24,15 +24,16 @@ var dtF = (d.getDate() < 10 ? "0" : "") + d.getDate() + "/" + (d.getMonth() + 1 
 
 $scope.dt = dtF;
 
+$scope.user = 'setor';
+
 $scope.addMessage = function() {
-console.log('body:'+$scope.msg)
   if($scope.setor == null){
      alert('Selecione o Setor correspondente clicando nas opções do lado esquerdo!');
   }
 
  if ($scope.msg && $scope.setor) {
      
-   FirebaseService.add({ id: $scope.id, body: $scope.msg, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true });
+   FirebaseService.add({ id: $scope.id, body: $scope.msg, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true , host : 'setor'});
 
    $scope.msg = "";
    $scope.dt = dtF;

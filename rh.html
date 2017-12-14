@@ -14,9 +14,9 @@
                         <table class="table">
                          <center><a href ng-if="data.length > limit" ng-click="more()" style="position:fixed;">Mostre mais...</a></center>  
                           <tr ng-repeat="post in data | limitTo: limit">    
-                            <td ng-style="{'background-color': {{post.id}} === {{id}} ? '#F8F8FF': ''}">
+                            <td ng-style="{'background-color': {{post.host}} === {{user}} ? '#F8F8FF': ''}">
                              <p ng-bind-html="post.body|trustAsHtml"></p>
-                             <p class="blog-post-meta">{{ post.date }}</p>
+                             <p class="blog-post-meta">{{ post.date }} por {{post.host}}</p>
                            </td>
                          </tr>
                        </table>
@@ -39,4 +39,3 @@
       <td><button class='btn btn-warning' ng-click='resolver(mensagem.$id)'>Fechar</button></td>
      </tr>
 </table>
-
