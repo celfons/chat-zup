@@ -26,9 +26,13 @@ $scope.change = function(value){
     $scope.data = FirebaseService.getPosts($scope.setor,$scope.id);
 }
 
+$scope.exibir = function(value){
+    $scope.data = FirebaseService.getMensagem(value);
+    $scope.setor = 'rh';
+    $scope.id = value;
+}
 
 $scope.mensagens = FirebaseService.getSetor();
-
 
 $scope.logout = function() {
   document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://celfons.marcelfonseca.com.br/chat-zup/#/";
@@ -37,18 +41,22 @@ $scope.logout = function() {
 var d   = new Date();
 var dtF = (d.getDate() < 10 ? "0" : "") + d.getDate() + "/" + (d.getMonth() + 1 < 10 ? "0" : "") + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 
-$scope.body = "";
 $scope.dt = dtF;
 
 $scope.addMessage = function() {
- if ($scope.body) {
+
+  if($scope.setor == null){
+     alert('Selecione o Setor correspondente clicando nas opções do lado esquerdo!');
+  }
+
+ if ($scope.body && $scope.setor) {
+     
    FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt });
 
-   $scope.title = "";
    $scope.body = "";
-   $scope.setor = "";
    $scope.dt = dtF;
  }
 };
 }
 ]);
+	

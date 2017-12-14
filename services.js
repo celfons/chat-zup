@@ -22,6 +22,12 @@ angular.module("app").service("FirebaseService", function($firebaseArray, $fireb
     this.add = function(post) {
       vm.addPosts.push(post);
     };
+    
+    this.getMensagem = function(value){
+        vm.posts = vm.ref.child("posts").orderByChild("setor_usuario").equalTo('rh'+value);
+        vm.syncObject = $firebaseArray(vm.posts);
+        return vm.syncObject;
+    }
 
     this.getPosts = function(setor,id) {
       if(setor == null){
