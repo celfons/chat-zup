@@ -11,7 +11,6 @@ $scope.exibir = function(value){
     $scope.data = FirebaseService.getMensagem(value);
     $scope.setor = 'rh';
     $scope.id = value;
-
 }
 
 $scope.resolver = function(id){
@@ -28,8 +27,12 @@ $scope.dt = dtF;
 $scope.user = 'setor';
 
 $scope.addMessage = function() {
- if ($scope.msg) {
+     if($scope.id == null) {
+        alert("Selecione um usuario para responder");
+    }
      
+ if ($scope.msg && $scope.id) {
+
    FirebaseService.add({ id: $scope.id, body: $scope.msg, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true , host : 'setor'});
 
    $scope.msg = "";

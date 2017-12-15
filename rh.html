@@ -6,6 +6,7 @@
       <div class="col-md-offset-12"><button type="button" id="logout" ng-click='logout()' class="btn btn-danger">Sair</button></div>
     <div class="col-md-4">
       <img width="173" src="./images/group.png">
+      <input type="text" ng-model="search" class="form-control" placeholder="pesquisa">
     </div>
     <tr ng-repeat="mensagem in mensagens | where:{active: true} | unique: 'id' | orderBy : 'date' | filter : search">    
       <td>
