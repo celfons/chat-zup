@@ -1,5 +1,5 @@
 angular.module("app").config(function(socialProvider){
-	socialProvider.setGoogleKey("1027792538513-vkb9rn0tf90d1bbvsim7ggm5jnnahphp.apps.googleusercontent.com");
+	socialProvider.setGoogleKey("780126296827-0b1lgmj2jr6jd9mbj00veb8qnd7r5g4t.apps.googleusercontent.com");
 });
 
 angular.module("app").controller("HomeController", ["$rootScope","$scope", "syncObject", "FirebaseService", "$timeout","$sce", function($rootScope,$scope, syncObject, FirebaseService, $timeout) {
