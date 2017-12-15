@@ -10,6 +10,7 @@ angular.module("app").controller("HomeController", ["$rootScope","$scope", "sync
   $scope.limit = limitStep;
   $scope.more = function() {
       $scope.limit += limitStep;
+      document.getElementById('datas').scrollTop = document.getElementById('datas').scrollHeight;
   };
   
   $scope.change = function(value){
@@ -40,7 +41,7 @@ $scope.dt = dtF;
 $scope.addMessage = function() {
 
   if($scope.setor == null){
-     alert('Selecione o Setor correspondente clicando nas opÃÂ§ÃÂµes do lado esquerdo!');
+     alert('Selecione o Setor correspondente clicando nas opÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes do lado esquerdo!');
   }
 
  if ($scope.body && $scope.setor) {
@@ -49,6 +50,7 @@ $scope.addMessage = function() {
 
    $scope.body = "";
    $scope.dt = dtF;
+   document.getElementById('datas').scrollTop = document.getElementById('datas').scrollHeight;
  }
 };
 

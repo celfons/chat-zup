@@ -4,6 +4,7 @@ angular.module("app").controller("RhController", ["$rootScope","$scope", "syncOb
   $scope.limit = limitStep;
   $scope.more = function() {
       $scope.limit += limitStep;
+      document.getElementById('datas').scrollTop = document.getElementById('datas').scrollHeight;
   };
   
 $scope.exibir = function(value){
@@ -28,7 +29,7 @@ $scope.user = 'setor';
 
 $scope.addMessage = function() {
   if($scope.setor == null){
-     alert('Selecione o Setor correspondente clicando nas opções do lado esquerdo!');
+     alert('Selecione o Setor correspondente clicando nas opÃ§Ãµes do lado esquerdo!');
   }
 
  if ($scope.msg && $scope.setor) {
@@ -37,6 +38,7 @@ $scope.addMessage = function() {
 
    $scope.msg = "";
    $scope.dt = dtF;
+   document.getElementById('datas').scrollTop = document.getElementById('datas').scrollHeight;
  }
 };
 }

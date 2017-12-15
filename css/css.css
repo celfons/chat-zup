@@ -24,13 +24,53 @@
 }
 
 body {
-    background-image: url("../bg.png");
+    background-image: url("../images/bg.png");
+    overflow-y: hidden;
 }
 #datas{
     background-color: white;
+    border: 10px 10px 0px 0px;
 }
 #teclado{
     background-color: white;
+}
+
+#login {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  margin-top: -100px;
+  z-index: 1;
+}
+
+.image-connect {
+  width: 200px;
+  position: absolute;
+  z-index: 0px;
+  right: 0px;
+}
+
+.image-connect img {
+  width: 100%;
+}
+
+.main-list {
+  list-style: none;
+}
+
+.main-list li{
+  margin-bottom: 5px;
+}
+
+.main-list li a {
+  color: #fff;
+}
+
+.main-list li a:hover {
+  cursor: pointer;
 }
 
 .modal-dialog {
@@ -44,4 +84,15 @@ body {
   height: auto;
   min-height: 100%;
   border-radius: 0;
+}
+.btn-social.btn-lg>:first-child{
+  line-height: 33px !important;
+}
+.link-people{
+  margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+  border: none !important;
 }
