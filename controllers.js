@@ -30,7 +30,7 @@ $scope.logout = function() {
   document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://celfons.marcelfonseca.com.br/chat-zup/#/";
 }
 
-$scope.user = 'user';
+$scope.user = 'usuario';
 
 var d   = new Date();
 var dtF = (d.getDate() < 10 ? "0" : "") + d.getDate() + "/" + (d.getMonth() + 1 < 10 ? "0" : "") + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
@@ -40,12 +40,12 @@ $scope.dt = dtF;
 $scope.addMessage = function() {
 
   if($scope.setor == null){
-     alert('Selecione o Setor correspondente clicando nas opções do lado esquerdo!');
+     alert('Selecione o Setor correspondente clicando nas opÃÂ§ÃÂµes do lado esquerdo!');
   }
 
  if ($scope.body && $scope.setor) {
     var name = random() ; 
-   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true, host : 'user', nome : name });
+   FirebaseService.add({ id: $scope.id, body: $scope.body, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true, host : 'usuario', nome : name });
 
    $scope.body = "";
    $scope.dt = dtF;
