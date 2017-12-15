@@ -1,7 +1,7 @@
 <h1>COACH RH</h1>
 <table class='table'>
-     <tr><td>CHATS</td></tr>
-     <tr ng-repeat="mensagem in mensagens | where:{active: true} | unique: 'id'">    
+     <tr><td><input type="text" ng-model="search" class='form-control' placeholder='PESQUISA'></td></tr>
+     <tr ng-repeat="mensagem in mensagens | where:{active: true} | unique: 'id' | orderBy : 'date' | filter : search">    
         <td>
         <a href data-toggle="modal" data-target="#{{mensagem.id}}" ng-click="exibir(mensagem.id)">{{mensagem.nome.name}}</a>
         <div class="modal fade" id="{{mensagem.id}}" role="dialog" tabindex='-1'>
@@ -36,7 +36,7 @@
             </div>
         </div>
       </td>
-      <td><button class='btn btn-warning' ng-click='resolver(mensagem.$id)'>Fechar</button></td>
+      <!--<td><button class='btn btn-warning' ng-click='resolver(mensagem.$id)'>Fechar</button></td>-->
      </tr>
 </table>
 

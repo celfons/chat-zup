@@ -24,7 +24,6 @@ angular.module("app").service("FirebaseService", function($firebaseArray, $fireb
     };
     
     this.update = function(id) {
-        console.log(id+'ok');
       var ref = new Firebase("https://chat-zup.firebaseio.com/posts/"+id);
         ref.update({
           active: false,
