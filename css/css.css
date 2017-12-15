@@ -29,7 +29,6 @@ body {
 }
 #datas{
     background-color: white;
-    border: 10px 10px 0px 0px;
 }
 #teclado{
     background-color: white;
@@ -92,7 +91,13 @@ body {
   margin-bottom: 5px;
   color: white;
   text-decoration: none;
+  margin-left: 45px;
+  text-transform: uppercase;
+}
+.link-people:hover{
+  text-decoration: underline;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
   border: none !important;
+  padding: 3px !important;
 }

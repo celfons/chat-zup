@@ -41,7 +41,7 @@ $scope.dt = dtF;
 $scope.addMessage = function() {
 
   if($scope.setor == null){
-     alert('Selecione o Setor correspondente clicando nas opÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes do lado esquerdo!');
+     alert('Selecione o Setor correspondente clicando nas opções do lado esquerdo!');
   }
 
  if ($scope.body && $scope.setor) {

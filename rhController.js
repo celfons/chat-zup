@@ -28,11 +28,7 @@ $scope.dt = dtF;
 $scope.user = 'setor';
 
 $scope.addMessage = function() {
-  if($scope.setor == null){
-     alert('Selecione o Setor correspondente clicando nas opÃ§Ãµes do lado esquerdo!');
-  }
-
- if ($scope.msg && $scope.setor) {
+ if ($scope.msg) {
      
    FirebaseService.add({ id: $scope.id, body: $scope.msg, setor: $scope.setor ,setor_usuario: $scope.setor+$scope.id, date: $scope.dt, active: true , host : 'setor'});
 
